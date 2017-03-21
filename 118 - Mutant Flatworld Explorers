@@ -1,0 +1,65 @@
+######################################################
+#########################TEXT#########################
+######################################################
+
+
+La robótica, la planificación del movimiento del robot y el aprendizaje de la máquina 
+son áreas que cruzan los límites de muchas de las subdisciplinas que comprenden la Ciencia
+de la Computación: la inteligencia artificial, los algoritmos y la complejidad, la ingeniería
+eléctrica y mecánica por nombrar algunos. Además, los robots como "tortugas" (inspirados en el 
+trabajo de Papert, Abelson y diSessa) y como "beeper-pickers" (inspirado en el trabajo de Pattis) 
+han sido estudiados y utilizados por los estudiantes como una introducción a la programación 
+durante muchos años.
+
+Este problema implica determinar la posición de un robot explorando un mundo plano precolombino.
+
+Dadas las dimensiones de una cuadrícula rectangular y una secuencia de posiciones e instrucciones 
+del robot, se debe escribir un programa que determine para cada secuencia de posiciones del robot
+e instrucciones la posición final del robot. Una posición de robot consiste en una coordenada de 
+cuadrícula (un par de números enteros: coordenada x seguida de coordenada) y una 
+orientación (N, S, E, W para el norte, sur, este y oeste).
+
+Una instrucción de robot es una cadena de las letras 'L', 'R' y 'F' que representan,
+respectivamente, las instrucciones:
+
+ Izquierda: el robot gira a la izquierda 90 grados y permanece en el punto actual de la cuadrícula.
+
+Derecha: el robot gira a la derecha 90 grados y permanece en el punto actual de la cuadrícula.
+
+Avanzar: el robot se mueve hacia adelante un punto de rejilla en la dirección de la orientación 
+actual y mantiene la misma orientación.
+
+La dirección norte corresponde a la dirección desde el punto de la cuadrícula (x, y) hasta 
+el punto de la cuadrícula (x, y + 1). Dado que la cuadrícula es rectangular y limitada, un robot 
+que se mueve "fuera" de un borde de la cuadrícula se pierde para siempre. Sin embargo, los robots
+perdidos dejan un "olor" robot que prohíbe que los futuros robots abandonen el mundo en el mismo 
+punto de la cuadrícula. El olor se deja en la última posición de cuadrícula que el robot ocupó 
+antes de desaparecer sobre el borde. Una instrucción para mover "fuera" del mundo desde un punto 
+de la cuadrícula desde el cual un robot ha sido perdido previamente es simplemente ignorada por 
+el robot actual.
+
+
+
+La primera línea de entrada es las coordenadas superior derecha del mundo rectangular, 
+se supone que las coordenadas inferior izquierda son 0,0.
+
+La entrada restante consiste en una secuencia de posiciones e instrucciones del robot 
+(dos líneas por robot). Una posición consiste en dos números enteros que especifican 
+las coordenadas iniciales del robot y una orientación (N, S, E, W), todas separadas por
+el espacio blanco en una línea. Una instrucción de robot es una cadena de las letras 'L', 'R' y 'F' en una línea.
+
+Cada robot se procesa secuencialmente, es decir, termina de ejecutar las instrucciones del
+robot antes de que el siguiente robot comience la ejecución.
+
+La entrada finaliza por fin de archivo. Puede suponer que todas las posiciones iniciales
+del robot están dentro de los límites de la cuadrícula especificada. El valor máximo de
+cualquier coordenada es 50. Todas las cadenas de instrucciones tendrán menos de 100 caracteres de longitud.
+
+
+Salida
+Para cada posición / instrucción del robot en la entrada, la salida debe indicar 
+la posición final de la rejilla y la orientación del robot. Si un robot cae del borde 
+de la cuadrícula, la palabra 'PERDIDO' debe ser impresa después de la posición y orientación.
+
+
+############################
