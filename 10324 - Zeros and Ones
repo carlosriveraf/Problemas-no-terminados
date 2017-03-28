@@ -1,0 +1,3 @@
+encontrar si desde la posición "x" hasta la posición "y" todos los caracteres son iguales
+x = min( i, j );
+x = max( i, j );
