@@ -1,3 +1,50 @@
 encontrar si desde la posición "x" hasta la posición "y" todos los caracteres son iguales
 x = min( i, j );
 x = max( i, j );
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+	char s[1000001];
+	int n, num = 1;
+	
+	while( cin.getline( s, 1000001, '\n' ) ) {
+		if( strlen( s ) == 0 ) {
+			return 0;
+		}
+				
+		scanf( "%d", &n );		
+		printf( "Case %d:\n", num++ );
+
+		int x, y, aux;	
+		while( n-- ) {
+			scanf( "%d %d", &x, &y );
+			bool checker = true;
+			
+			if( x > y ) {
+				aux = x;
+				x = y;
+				y = x;
+			}
+			
+			for( int i = x ; i <= y ; i++ ) {
+				if( s[i] != s[x] ) {
+					checker = false;
+				}
+			}
+			
+			if( checker ) {
+				printf( "Yes\n" );
+			}
+			else{
+				printf( "No\n" );
+			}
+		}
+		
+		getc(stdin);
+	}
+		
+    return 0;
+}
